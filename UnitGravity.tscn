@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://UnitGravity.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="CylinderMesh" id=2]
+
+[sub_resource type="CylinderMesh" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.521569, 0.219608, 0.219608, 1 )
+
+[node name="RigidBody" type="RigidBody"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CollisionShape"]
+transform = Transform( 0.555652, 0, 0, 0, 1.73092e-08, -0.475956, 0, 1.05815, -2.67248e-07, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="CollisionShape"]
+transform = Transform( 0.184687, 0, 0, 0, 0.527488, -5.01282e-08, 0, -5.01282e-08, 0.219803, 0, 0.927122, -1.51047e-07 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.553716, -0.483963, 0, 0.464624, 0.576764, 0, 0, 0, 0.131081, 0, 0, 1.44967 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
